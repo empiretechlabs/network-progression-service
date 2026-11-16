@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.stage {
+  position: relative;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stage svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: #45b649;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 7s ease-in-out infinite;
+}
+
+.dot {
+  fill: #45b649;
+  filter: drop-shadow(0 0 7px #45b649);
+}
+
+.word {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(50px, 8vw, 76px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: #45b649;
+  opacity: 0;
+  transform: translateY(35px) scale(0.85);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.word.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.word.glo {
+  color: #45b649;
+  letter-spacing: 5px;
+}
+
+.caption {
+  margin-top: 20px;
+  color: #777;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: appear 1s ease 1s forwards;
+}
+
+.progress {
+  width: 160px;
+  height: 3px;
+  margin: 35px auto 0;
+  background: #daf3dc;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #45b649;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: progress 7s linear infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  15%,
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .stage {
+    height: 180px;
+  }
+  .word {
+    letter-spacing: -2px;
+  }
+}
