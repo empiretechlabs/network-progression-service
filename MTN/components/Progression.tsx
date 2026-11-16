@@ -10,11 +10,19 @@ const MOTION_PATH = `M -50 190
                    S 520 220, 650 100
                    S 850 30, 900 120`;
 
-export default function Progression() {
+const FINAL_WORD = WORDS[WORDS.length - 1];
+
+type ProgressionProps = {
+  onComplete?: () => void;
+};
+
+export default function Progression({ onComplete }: ProgressionProps) {
   const [word, setWord] = useState<(typeof WORDS)[number]>("Unreliable");
   const [visible, setVisible] = useState(false);
   const indexRef = useRef(0);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const completedRef = useRef(false);
 
   useEffect(() => {
     const transition = () => {
@@ -33,13 +41,26 @@ export default function Progression() {
     };
 
     transition();
-    const interval = setInterval(transition, 1750);
+    intervalRef.current = setInterval(transition, 1750);
 
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      clearInterval(interval);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (!onComplete || completedRef.current) return;
+    if (word !== FINAL_WORD || !visible) return;
+
+    const doneTimer = setTimeout(() => {
+      completedRef.current = true;
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      onComplete();
+    }, 1800);
+
+    return () => clearTimeout(doneTimer);
+  }, [word, visible, onComplete]);
 
   const isMtn = word === "MTN";
 

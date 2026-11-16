@@ -1,11 +1,5 @@
-import Progression from "@/components/Progression";
-import SplashReveal from "@/components/SplashReveal";
-import { brand } from "@/lib/brand";
+import { redirect } from "next/navigation";
 
 export default function ExperiencePage() {
-  return (
-    <SplashReveal name={brand.name} color={brand.color}>
-      <Progression />
-    </SplashReveal>
-  );
+  redirect("/?start=progression");
 }

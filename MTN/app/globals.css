@@ -310,6 +310,18 @@ body:has(.page) {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 20px 48px;
+  animation: landingIn 0.55s ease forwards;
+}
+
+@keyframes landingIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .landing-hero {

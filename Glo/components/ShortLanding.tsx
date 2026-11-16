@@ -18,7 +18,7 @@ export default function ShortLanding() {
         </h1>
         <p className="landing-lead">{brand.heroText}</p>
         <Link
-          href="/experience"
+          href="/#services"
           className="landing-cta"
           style={{
             background: brand.color,
@@ -29,7 +29,7 @@ export default function ShortLanding() {
         </Link>
       </section>
 
-      <section className="landing-actions">
+      <section className="landing-actions" id="services">
         {brand.actions.map((action) => (
           <article
             key={action.title}
@@ -53,15 +53,15 @@ export default function ShortLanding() {
       </aside>
 
       <footer className="landing-foot">
-        <Link href="/experience" className="landing-foot-link">
+        <Link href="/?start=progression" className="landing-foot-link">
           Network status
         </Link>
         <span>·</span>
-        <Link href="/experience" className="landing-foot-link">
+        <Link href="#" className="landing-foot-link">
           Privacy
         </Link>
         <span>·</span>
-        <Link href="/experience" className="landing-foot-link">
+        <Link href="#" className="landing-foot-link">
           Terms
         </Link>
       </footer>

@@ -1,5 +1,10 @@
-import ShortLanding from "@/components/ShortLanding";
+import HomeFlow from "@/components/HomeFlow";
+import { Suspense } from "react";
 
 export default function Home() {
-  return <ShortLanding />;
+  return (
+    <Suspense fallback={null}>
+      <HomeFlow />
+    </Suspense>
+  );
 }
