@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import BrandHeader from "@/components/BrandHeader";
 
 const WORDS = ["Unreliable", "Negligent", "Scam", "Glo"] as const;
 
@@ -43,6 +44,8 @@ export default function Progression() {
   const isGlo = word === "Glo";
 
   return (
+    <div className="page">
+      <BrandHeader name="Glo" color="#45b649" />
     <div className="container">
       <div className="stage">
         <svg viewBox="0 0 800 240" preserveAspectRatio="none">
@@ -70,6 +73,7 @@ export default function Progression() {
       <div className="progress">
         <span />
       </div>
+    </div>
     </div>
   );
 }
