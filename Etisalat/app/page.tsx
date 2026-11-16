@@ -1,10 +1,5 @@
-import Progression from "@/components/Progression";
-import SplashReveal from "@/components/SplashReveal";
+import ShortLanding from "@/components/ShortLanding";
 
 export default function Home() {
-  return (
-    <SplashReveal name="Etisalat" color="#00cc52">
-      <Progression />
-    </SplashReveal>
-  );
+  return <ShortLanding />;
 }

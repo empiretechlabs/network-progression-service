@@ -11,6 +11,11 @@ Next.js clones of the animated **“The Progression”** landing page for Nigeri
 
 Each app cycles: **Unreliable → Negligent → Scam → [carrier name]** with caption *The Suffering Network...*
 
+Each app has:
+
+- **`/`** — Short carrier-style landing (same layout, carrier copy & colors)
+- **`/experience`** — Splash slice + “The Progression” animation
+
 ## Run one carrier
 
 ```bash

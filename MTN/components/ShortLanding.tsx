@@ -1,0 +1,70 @@
+import BrandHeader from "@/components/BrandHeader";
+import { brand } from "@/lib/brand";
+import Link from "next/link";
+
+export default function ShortLanding() {
+  const accent = "accent" in brand ? brand.accent : brand.color;
+
+  return (
+    <div className="landing">
+      <BrandHeader name={brand.name} color={brand.color} />
+
+      <section className="landing-hero" style={{ background: brand.softBg }}>
+        <p className="landing-kicker" style={{ color: brand.color }}>
+          {brand.name} Nigeria
+        </p>
+        <h1 className="landing-title" style={{ color: accent }}>
+          {brand.heroTitle}
+        </h1>
+        <p className="landing-lead">{brand.heroText}</p>
+        <Link
+          href="/experience"
+          className="landing-cta"
+          style={{
+            background: brand.color,
+            color: brand.name === "MTN" ? "#000" : "#fff",
+          }}
+        >
+          Continue
+        </Link>
+      </section>
+
+      <section className="landing-actions">
+        {brand.actions.map((action) => (
+          <article
+            key={action.title}
+            className="landing-card"
+            style={{ borderColor: brand.trackBg }}
+          >
+            <h3 style={{ color: brand.color }}>{action.title}</h3>
+            <p>{action.desc}</p>
+          </article>
+        ))}
+      </section>
+
+      <aside
+        className="landing-promo"
+        style={{
+          background: brand.color,
+          color: brand.name === "MTN" ? "#000" : "#fff",
+        }}
+      >
+        {brand.promo}
+      </aside>
+
+      <footer className="landing-foot">
+        <Link href="/experience" className="landing-foot-link">
+          Network status
+        </Link>
+        <span>·</span>
+        <Link href="/experience" className="landing-foot-link">
+          Privacy
+        </Link>
+        <span>·</span>
+        <Link href="/experience" className="landing-foot-link">
+          Terms
+        </Link>
+      </footer>
+    </div>
+  );
+}
