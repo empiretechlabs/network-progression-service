@@ -3,7 +3,10 @@ import { brand } from "@/lib/brand";
 import Link from "next/link";
 
 export default function ShortLanding() {
-  const accent = "accent" in brand ? brand.accent : brand.color;
+  const accent: string =
+    "accent" in brand && typeof brand.accent === "string"
+      ? brand.accent
+      : brand.color;
 
   return (
     <div className="landing">
