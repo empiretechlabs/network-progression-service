@@ -25,7 +25,7 @@ export default function ShortLanding() {
           className="landing-cta"
           style={{
             background: brand.color,
-            color: brand.name === "MTN" ? "#000" : "#fff",
+            color: brand.onColor,
           }}
         >
           Continue
@@ -49,7 +49,7 @@ export default function ShortLanding() {
         className="landing-promo"
         style={{
           background: brand.color,
-          color: brand.name === "MTN" ? "#000" : "#fff",
+          color: brand.onColor,
         }}
       >
         {brand.promo}

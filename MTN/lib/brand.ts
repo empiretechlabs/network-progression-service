@@ -1,6 +1,7 @@
 export const brand = {
   name: "MTN",
   color: "#ffcb05",
+  onColor: "#000000",
   accent: "#1a1a1a",
   softBg: "#fffbea",
   trackBg: "#fff3cc",

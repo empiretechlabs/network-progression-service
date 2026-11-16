@@ -1,6 +1,7 @@
 export const brand = {
   name: "Etisalat",
   color: "#00cc52",
+  onColor: "#ffffff",
   softBg: "#f2fdf6",
   trackBg: "#d4f9e2",
   heroTitle: "More Blaze",

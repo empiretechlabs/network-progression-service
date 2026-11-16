@@ -1,6 +1,7 @@
 export const brand = {
   name: "Airtel",
   color: "#e40000",
+  onColor: "#ffffff",
   softBg: "#fff5f5",
   trackBg: "#f3dada",
   heroTitle: "Experience More",

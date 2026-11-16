@@ -1,6 +1,7 @@
 export const brand = {
   name: "Glo",
   color: "#45b649",
+  onColor: "#ffffff",
   softBg: "#f3fbf4",
   trackBg: "#daf3dc",
   heroTitle: "Glo with Pride",
