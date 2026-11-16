@@ -9,11 +9,11 @@ export default function BrandHeader({ name, color }: BrandHeaderProps) {
   return (
     <header className="brand-header">
       <Image
-        className="brand-logo"
+        className="brand-logo brand-logo--swoosh"
         src="/logo.svg"
         alt={`${name} logo`}
-        width={120}
-        height={40}
+        width={44}
+        height={44}
         priority
       />
       <span className="brand-name" style={{ color }}>

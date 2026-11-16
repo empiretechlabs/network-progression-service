@@ -53,16 +53,16 @@ export default function SplashReveal({
           aria-label={`Loading ${name}`}
         >
           <div className="splash-brand">
-            <div className="splash-logo-slice">
+            <div className="splash-logo-slice splash-logo-slice--square">
               <div
                 className={`splash-half splash-half--top${revealing ? " is-open" : ""}`}
               >
                 <Image
                   src="/logo.svg"
                   alt=""
-                  width={140}
-                  height={48}
-                  className="splash-logo-img"
+                  width={72}
+                  height={72}
+                  className="splash-logo-img splash-logo-img--swoosh"
                   priority
                 />
               </div>
@@ -75,9 +75,9 @@ export default function SplashReveal({
                 <Image
                   src="/logo.svg"
                   alt=""
-                  width={140}
-                  height={48}
-                  className="splash-logo-img"
+                  width={72}
+                  height={72}
+                  className="splash-logo-img splash-logo-img--swoosh"
                   priority
                 />
               </div>
